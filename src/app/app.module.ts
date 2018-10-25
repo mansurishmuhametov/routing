@@ -1,21 +1,23 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
-import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
 import { CrisisListComponent } from './crisis-list/crisis-list.component';
-import { HeroListComponent } from './hero-list/hero-list.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+
+import { HeroesModule } from './heroes/heroes.module';
+import { AppRoutingModule } from './app-routing.module';
 
 @NgModule({
     imports: [
         BrowserModule,
+        HeroesModule,
+        // have to be the last
         AppRoutingModule
     ],
     declarations: [
         AppComponent,
         CrisisListComponent,
-        HeroListComponent,
         PageNotFoundComponent
     ],
     bootstrap: [AppComponent]
