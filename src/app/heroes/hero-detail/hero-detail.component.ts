@@ -4,6 +4,7 @@ import { switchMap } from 'rxjs/operators';
 
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
+import { Observable } from '../../../../node_modules/rxjs/Observable';
 
 @Component({
     selector: 'app-hero-detail',
@@ -11,9 +12,7 @@ import { HeroService } from '../hero.service';
     styleUrls: ['./hero-detail.component.css']
 })
 export class HeroDetailComponent implements OnInit {
-
-    @Input() hero: Hero;
-    @Input() hero$: any;
+    hero$: Observable<Hero>;
 
     constructor(
         private route: ActivatedRoute,
@@ -22,20 +21,15 @@ export class HeroDetailComponent implements OnInit {
     ) { }
 
     ngOnInit() {
-        this.initSubscribers();
+        this.hero$ = this.route.params.pipe(
+            switchMap((params: ParamMap) => {
+                return this.service.getHero(+params.get('id'));
+            })
+        );
     }
 
-    initSubscribers() {
-        const self = this;
-
-        this.route.params.subscribe((routeParams) => {
-            self.heroSelectedHandler(routeParams);
-        });
-    }
-
-    heroSelectedHandler(routeParams) {
-        const heroId = +routeParams.id;
-
-        this.service.getHero(heroId).subscribe((hero) => this.hero = hero);
+    goToHeroes(hero: Hero) {
+        const heroId = hero ? hero.id : null;
+        this.router.navigate(['/heroes', { id: heroId, foo: 'foo'}]);
     }
 }
