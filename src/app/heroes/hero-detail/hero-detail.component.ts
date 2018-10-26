@@ -4,7 +4,7 @@ import { switchMap } from 'rxjs/operators';
 
 import { Hero } from '../hero';
 import { HeroService } from '../hero.service';
-import { Observable } from '../../../../node_modules/rxjs/Observable';
+import { Observable } from 'rxjs/Observable';
 
 @Component({
     selector: 'app-hero-detail',
