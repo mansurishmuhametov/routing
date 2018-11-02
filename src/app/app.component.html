@@ -1,11 +1,16 @@
-<h1>Angular Router</h1>
-<nav>
-  <a routerLink="/crises" routerLinkActive="active">Crisis Center</a>
-  <a routerLink="/heroes" routerLinkActive="active">Heroes</a>
-</nav>
-<!-- не хочу использовать анимацию
-<div [@routeAnimation]="getAnimationData(routerOutlet)">
-  <router-outlet #routerOutlet="outlet"></router-outlet>
+<div class="app">
+    <h1>Angular Router</h1>
+    <nav>
+        <a routerLink="/crises" routerLinkActive="active">Crisis Center</a>
+        <a routerLink="/heroes" routerLinkActive="active">Heroes</a>
+        <a routerLink="/crisis-center" routerLinkActive="active">My crisis center</a>
+    </nav>
+    <div class="app__main-outlet">
+        <router-outlet></router-outlet>
+    </div>
+    <div class="app__popup-outlet">
+        <div>Popup here</div>
+        <a [routerLink]="[{ outlets: { popup: ['compose'] } }]">Open contact</a>
+        <router-outlet name="popup"></router-outlet>
+    </div>
 </div>
--->
-<router-outlet></router-outlet>

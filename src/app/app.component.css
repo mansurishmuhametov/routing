@@ -1,0 +1,12 @@
+.app {
+    border: solid 5px palevioletred;
+}
+.app__main-outlet {
+    border: solid 5px palevioletred;
+}
+.app__popup-outlet {
+    border: solid 5px red;
+}
+.app__girl-outlet {
+    border: solid 5px palegoldenrod;
+}

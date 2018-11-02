@@ -1,0 +1,14 @@
+<div class="crisis-center">
+    <h2>Crisis center</h2>
+    <div>
+        <div>Message</div>
+        <a [routerLink]="['/crisis-center', { outlets: { 'messageContent': ['message'] } }]">Open message</a>
+        <div>
+            Here message content
+            <router-outlet name="messageContent"></router-outlet>
+        </div>
+    </div>
+    <div class="crisis-center__router-outlet">
+        <router-outlet></router-outlet>
+    </div>
+</div>
