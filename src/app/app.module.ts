@@ -10,6 +10,7 @@ import { HeroesModule } from './heroes/heroes.module';
 import { AppComponent } from './app.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { ComposeMessageComponent } from './compose-message/compose-message.component';
+import { AdminModule } from './admin/admin.module';
 
 @NgModule({
     imports: [
@@ -18,6 +19,7 @@ import { ComposeMessageComponent } from './compose-message/compose-message.compo
         CrisisCenterModule,
         FormsModule,
         HeroesModule,
+        AdminModule,
         // have to be the last
         AppRoutingModule
     ],
