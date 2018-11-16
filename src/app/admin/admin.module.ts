@@ -12,6 +12,7 @@ import { ManageHeroesComponent } from './manage-heroes/manage-heroes.component';
     CommonModule,
     AdminRoutingModule
   ],
-  declarations: [AdminDashboardComponent, AdminComponent, ManageCrisesComponent, ManageHeroesComponent]
+  declarations: [AdminDashboardComponent, AdminComponent, ManageCrisesComponent, ManageHeroesComponent],
+  providers: [],
 })
 export class AdminModule { }
