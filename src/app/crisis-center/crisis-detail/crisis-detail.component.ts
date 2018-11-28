@@ -4,6 +4,7 @@ import { switchMap } from 'rxjs/operators';
 
 import { Crisis } from '../crisis';
 import { CrisisService } from '../crisis.service';
+import { DialogService } from '../../dialog.service';
 import { Observable } from 'rxjs/Observable';
 
 @Component({
@@ -13,11 +14,14 @@ import { Observable } from 'rxjs/Observable';
 })
 export class CrisisDetailComponent implements OnInit {
     crisis$: Observable<Crisis>;
+    crisis: Crisis;
+    editName: string;
 
     constructor(
         private route: ActivatedRoute,
         private router: Router,
-        private service: CrisisService
+        private service: CrisisService,
+        public dialogService: DialogService
     ) { }
 
     ngOnInit() {
@@ -26,10 +30,28 @@ export class CrisisDetailComponent implements OnInit {
                 return this.service.getCrisis(+params.id);
             })
         );
+
+        this.crisis$.subscribe(crisis => this.crisis = crisis);
     }
 
     goToCrises(crisis: Crisis) {
         const crisisId = crisis ? crisis.id : null;
         this.router.navigate(['../', { id: crisisId, foo: 'foo'}], { relativeTo: this.route });
+    }
+
+    cancel() {
+        this.goToCrises(null);
+    }
+
+    save() {
+        this.goToCrises(null);
+    }
+
+    canDeactivate(): Observable<boolean> | boolean {
+        if (!this.crisis || this.crisis.name === this.editName) {
+            return true;
+        }
+
+        return this.dialogService.confirm('Discard changes?');
     }
 }

@@ -7,10 +7,11 @@ import { CrisisCenterComponent } from './crisis-center/crisis-center.component';
 import { CrisisCenterHomeComponent } from './crisis-center-home/crisis-center-home.component';
 import { CrisisDetailComponent } from './crisis-detail/crisis-detail.component';
 import { CrisisListComponent } from './crisis-list/crisis-list.component';
+import { MessageComponent } from './message/message.component';
 
 import { CrisisService } from './crisis.service';
+import { DialogService } from '../dialog.service';
 import { MessageService } from '../message.service';
-import { MessageComponent } from './message/message.component';
 
 @NgModule({
     imports: [
@@ -27,6 +28,7 @@ import { MessageComponent } from './message/message.component';
     ],
     providers: [
         CrisisService,
+        DialogService,
         MessageService
     ]
 })

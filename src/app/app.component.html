@@ -27,7 +27,7 @@
     </div>
     <div class="app__popup-outlet">
         <div>Popup here</div>
-        <a [routerLink]="[{ outlets: { popup: ['compose'] } }]">Open contact</a>
+        <a [routerLink]="['', { outlets: { popup: ['compose'] } }]">Open contact</a>
         <router-outlet name="popup"></router-outlet>
     </div>
 </div>
