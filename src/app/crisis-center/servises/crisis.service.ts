@@ -3,9 +3,9 @@ import { of } from 'rxjs/observable/of';
 import { Injectable } from '@angular/core';
 import * as _ from 'lodash';
 
-import { Crisis } from './crisis';
-import { Crises } from './mock-crises';
-import { MessageService } from '../message.service';
+import { Crisis } from '../models/crisis';
+import { Crises } from '../models/mock-crises';
+import { MessageService } from '../../message.service';
 
 @Injectable()
 export class CrisisService {

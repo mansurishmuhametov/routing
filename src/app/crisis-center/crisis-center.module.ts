@@ -3,13 +3,13 @@ import { CrisisCenterRoutingModule } from './crisis-center-routing.module';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 
-import { CrisisCenterComponent } from './crisis-center/crisis-center.component';
-import { CrisisCenterHomeComponent } from './crisis-center-home/crisis-center-home.component';
-import { CrisisDetailComponent } from './crisis-detail/crisis-detail.component';
-import { CrisisListComponent } from './crisis-list/crisis-list.component';
-import { MessageComponent } from './message/message.component';
+import { CrisisCenterComponent } from './components/crisis-center/crisis-center.component';
+import { CrisisCenterHomeComponent } from './components/crisis-center-home/crisis-center-home.component';
+import { CrisisDetailComponent } from './components/crisis-detail/crisis-detail.component';
+import { CrisisListComponent } from './components/crisis-list/crisis-list.component';
+import { MessageComponent } from './components/message/message.component';
 
-import { CrisisService } from './crisis.service';
+import { CrisisService } from './servises/crisis.service';
 import { DialogService } from '../dialog.service';
 import { MessageService } from '../message.service';
 

@@ -2,9 +2,9 @@ import { Component, OnInit, Input } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 import { switchMap } from 'rxjs/operators';
 
-import { Crisis } from '../crisis';
-import { CrisisService } from '../crisis.service';
-import { DialogService } from '../../dialog.service';
+import { Crisis } from '../../models/crisis';
+import { CrisisService } from '../../servises/crisis.service';
+import { DialogService } from '../../../dialog.service';
 import { Observable } from 'rxjs/Observable';
 
 @Component({
