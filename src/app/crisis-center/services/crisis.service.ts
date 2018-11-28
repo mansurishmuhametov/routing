@@ -1,4 +1,4 @@
-import { Observable } from 'rxjs/Observable';
+import { Observable } from 'rxjs/observable';
 import { of } from 'rxjs/observable/of';
 import { Injectable } from '@angular/core';
 import * as _ from 'lodash';

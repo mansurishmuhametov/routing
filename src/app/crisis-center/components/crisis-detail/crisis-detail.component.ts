@@ -3,7 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 import { switchMap } from 'rxjs/operators';
 
 import { Crisis } from '../../models/crisis';
-import { CrisisService } from '../../servises/crisis.service';
+import { CrisisService } from '../../services/crisis.service';
 import { DialogService } from '../../../dialog.service';
 import { Observable } from 'rxjs/Observable';
 
@@ -25,6 +25,13 @@ export class CrisisDetailComponent implements OnInit {
     ) { }
 
     ngOnInit() {
+        this.route.data
+            .subscribe((data: { crisis: Crisis }) => {
+                this.editName = data.crisis.name;
+                this.crisis = data.crisis;
+            });
+
+        /*
         this.crisis$ = this.route.params.pipe(
             switchMap((params) => {
                 return this.service.getCrisis(+params.id);
@@ -32,6 +39,7 @@ export class CrisisDetailComponent implements OnInit {
         );
 
         this.crisis$.subscribe(crisis => this.crisis = crisis);
+        */
     }
 
     goToCrises(crisis: Crisis) {

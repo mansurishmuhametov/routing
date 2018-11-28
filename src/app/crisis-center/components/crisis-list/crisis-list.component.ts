@@ -2,7 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
 import { Crisis } from '../../models/crisis';
-import { CrisisService } from '../../servises/crisis.service';
+import { CrisisService } from '../../services/crisis.service';
 import { Observable } from 'rxjs/Observable';
 import { switchMap } from 'rxjs/operators';
 

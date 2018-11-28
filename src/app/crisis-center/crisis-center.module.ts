@@ -9,7 +9,8 @@ import { CrisisDetailComponent } from './components/crisis-detail/crisis-detail.
 import { CrisisListComponent } from './components/crisis-list/crisis-list.component';
 import { MessageComponent } from './components/message/message.component';
 
-import { CrisisService } from './servises/crisis.service';
+import { CrisisDetailResolverService } from './services/crisis-detail-resolver.service';
+import { CrisisService } from './services/crisis.service';
 import { DialogService } from '../dialog.service';
 import { MessageService } from '../message.service';
 
@@ -27,6 +28,7 @@ import { MessageService } from '../message.service';
         MessageComponent
     ],
     providers: [
+        CrisisDetailResolverService,
         CrisisService,
         DialogService,
         MessageService
