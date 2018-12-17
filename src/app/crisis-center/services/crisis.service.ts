@@ -5,7 +5,7 @@ import * as _ from 'lodash';
 
 import { Crisis } from '../models/crisis';
 import { Crises } from '../models/mock-crises';
-import { MessageService } from '../../message.service';
+import { MessageService } from '@app/message.service';
 
 @Injectable()
 export class CrisisService {

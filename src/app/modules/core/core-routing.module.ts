@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
 
-import { ComposeMessageComponent } from './compose-message/compose-message.component';
-import { LoginComponent } from './auth/login/login.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
+import { ComposeMessageComponent } from '@app/compose-message/compose-message.component';
+import { LoginComponent } from '@app/auth/login/login.component';
+import { PageNotFoundComponent } from '@app/page-not-found/page-not-found.component';
 
-import { AuthGuard } from './auth/auth.guard';
-import { SelectivePreloadingStrategyService } from './selective-preloading-strategy.service';
+import { AuthGuard } from '@app/auth/auth.guard';
+import { SelectivePreloadingStrategyService } from '@app/selective-preloading-strategy.service';
 
-const appRoutes: Routes = [
+const routes: Routes = [
     // Хотелось бы также закрыть доступ к popup если пользователь не аутентифицирован
     // подумать как переместить к childrens
     {
@@ -18,12 +18,12 @@ const appRoutes: Routes = [
     },
     {
         path: 'admin',
-        loadChildren: './admin/admin.module#AdminModule',
+        loadChildren: '@app/admin/admin.module#AdminModule',
         canLoad: [AuthGuard]
     },
     {
         path: 'crisis-center',
-        loadChildren: './crisis-center/crisis-center.module#CrisisCenterModule',
+        loadChildren: '@app/crisis-center/crisis-center.module#CrisisCenterModule',
         data: { preload: false }
     },
     {
@@ -44,19 +44,16 @@ const appRoutes: Routes = [
 @NgModule({
     imports: [
         RouterModule.forRoot(
-            appRoutes,
+            routes,
             {
                 enableTracing: false,
                 // preloadingStrategy: PreloadAllModules
                 preloadingStrategy: SelectivePreloadingStrategyService
             }
-        )
-    ],
-    exports: [
-        RouterModule
-    ],
+        )],
+    exports: [RouterModule],
     providers: [
         SelectivePreloadingStrategyService
     ]
 })
-export class AppRoutingModule { }
+export class CoreRoutingModule { }

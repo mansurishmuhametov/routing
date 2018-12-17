@@ -2,10 +2,10 @@ import { BrowserModule } from '@angular/platform-browser';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
-import { Router } from '@angular/router';
+import { Router, RouterModule } from '@angular/router';
 
-import { AppRoutingModule } from './app-routing.module';
 import { AuthModule } from './auth/auth.module';
+import { CoreModule } from '@app-modules/core/core.module';
 import { HeroesModule } from './heroes/heroes.module';
 
 import { AppComponent } from './app.component';
@@ -24,8 +24,9 @@ import { AuthService } from './auth/auth.service';
         BrowserAnimationsModule,
         FormsModule,
         HeroesModule,
-        // AppRoutingModule have to be the last
-        AppRoutingModule
+        RouterModule,
+        // CoreModule have to be the last, cause default route
+        CoreModule
     ],
     declarations: [
         AppComponent,
