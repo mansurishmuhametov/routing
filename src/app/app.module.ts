@@ -9,7 +9,6 @@ import { CoreModule } from '@app/core/core.module';
 import { HeroesModule } from './heroes/heroes.module';
 
 import { AppComponent } from './app.component';
-import { ComposeMessageComponent } from './compose-message/compose-message.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 import { AuthGuard } from './auth/auth.guard';
@@ -30,7 +29,6 @@ import { AuthService } from './auth/auth.service';
     ],
     declarations: [
         AppComponent,
-        ComposeMessageComponent,
         PageNotFoundComponent
     ],
     providers: [
