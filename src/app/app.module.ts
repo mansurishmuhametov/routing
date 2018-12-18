@@ -5,7 +5,7 @@ import { NgModule } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 
 import { AuthModule } from './auth/auth.module';
-import { CoreModule } from '@app-modules/core/core.module';
+import { CoreModule } from '@app/core/core.module';
 import { HeroesModule } from './heroes/heroes.module';
 
 import { AppComponent } from './app.component';
