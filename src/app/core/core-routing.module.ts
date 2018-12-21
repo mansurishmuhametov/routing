@@ -1,9 +1,9 @@
 import { NgModule } from '@angular/core';
 import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
 
-import { ComposeMessageComponent } from '@app-core/compose-message/compose-message.component';
+import { ComposeMessageComponent } from '@app-core/components/compose-message/compose-message.component';
 import { LoginComponent } from '@app/auth/login/login.component';
-import { PageNotFoundComponent } from '@app/page-not-found/page-not-found.component';
+import { PageNotFoundComponent } from '@app-core/components/page-not-found/page-not-found.component';
 
 import { AuthGuard } from '@app/auth/auth.guard';
 import { SelectivePreloadingStrategyService } from '@app/selective-preloading-strategy.service';

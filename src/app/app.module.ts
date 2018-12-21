@@ -9,7 +9,6 @@ import { CoreModule } from '@app/core/core.module';
 import { HeroesModule } from './heroes/heroes.module';
 
 import { AppComponent } from './app.component';
-import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 
 import { AuthGuard } from './auth/auth.guard';
 import { CanDeactivateGuard } from './can-deactivate.guard';
@@ -28,8 +27,7 @@ import { AuthService } from './auth/auth.service';
         CoreModule
     ],
     declarations: [
-        AppComponent,
-        PageNotFoundComponent
+        AppComponent
     ],
     providers: [
         AuthGuard,
