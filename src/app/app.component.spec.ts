@@ -1,3 +1,4 @@
+import { APP_BASE_HREF } from '@angular/common';
 import { TestBed, async } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 
@@ -16,6 +17,7 @@ describe('AppComponent', () => {
             declarations: [
                 AppComponent
             ],
+            providers: [{ provide: APP_BASE_HREF, useValue: '/' }]
         }).compileComponents();
     }));
     it('should create the app', async(() => {
@@ -32,6 +34,6 @@ describe('AppComponent', () => {
         const fixture = TestBed.createComponent(AppComponent);
         fixture.detectChanges();
         const compiled = fixture.debugElement.nativeElement;
-        expect(compiled.querySelector('h1').textContent).toContain('Welcome to app!');
+        expect(compiled.querySelector('h1').textContent).toContain('Angular Router');
     }));
 });
