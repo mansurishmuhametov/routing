@@ -1,0 +1,35 @@
+import { Component, OnInit, Input } from '@angular/core';
+import { Router, ActivatedRoute } from '@angular/router';
+import { switchMap } from 'rxjs/operators';
+
+import { Hero } from '../../models/hero';
+import { HeroService } from '../../services/hero.service';
+import { Observable } from 'rxjs/Observable';
+
+@Component({
+    selector: 'app-hero-detail',
+    templateUrl: './hero-detail.component.html',
+    styleUrls: ['./hero-detail.component.css']
+})
+export class HeroDetailComponent implements OnInit {
+    hero$: Observable<Hero>;
+
+    constructor(
+        private route: ActivatedRoute,
+        private router: Router,
+        private service: HeroService
+    ) { }
+
+    ngOnInit() {
+        this.hero$ = this.route.params.pipe(
+            switchMap((params) => {
+                return this.service.getHero(+params.id);
+            })
+        );
+    }
+
+    goToHeroes(hero: Hero) {
+        const heroId = hero ? hero.id : null;
+        this.router.navigate(['/superheroes', { id: heroId, foo: 'foo'}]);
+    }
+}

@@ -4,16 +4,16 @@ import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 
-import { AuthModule } from './auth/auth.module';
+import { AuthModule } from '@app-modules/auth/auth.module';
 import { CoreModule } from '@app/core/core.module';
-import { HeroesModule } from './heroes/heroes.module';
+import { HeroesModule } from './modules/heroes/heroes.module';
 
-import { AppComponent } from './app.component';
+import { AppComponent } from '@app-core/components/app/app.component';
 
-import { AuthGuard } from './auth/auth.guard';
+import { AuthGuard } from '@app/modules/auth/guards/auth.guard';
 import { CanDeactivateGuard } from './can-deactivate.guard';
 
-import { AuthService } from './auth/auth.service';
+import { AuthService } from '@app/modules/auth/services/auth.service';
 
 @NgModule({
     imports: [
