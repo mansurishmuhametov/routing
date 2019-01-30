@@ -1,10 +1,8 @@
 import { Component, OnInit } from '@angular/core';
-import { Router, ActivatedRoute } from '@angular/router';
+import { ActivatedRoute } from '@angular/router';
 
 import { Hero } from '../../models/hero';
 import { HeroService } from '../../services/hero.service';
-import { Observable } from 'rxjs/Observable';
-import { switchMap } from 'rxjs/operators';
 
 @Component({
     selector: 'app-hero-list',
@@ -18,7 +16,6 @@ export class HeroListComponent implements OnInit {
     constructor(
         private heroService: HeroService,
         private route: ActivatedRoute,
-        private router: Router,
     ) { }
 
     ngOnInit() {
@@ -33,9 +30,5 @@ export class HeroListComponent implements OnInit {
     refreshHeroes() {
         this.heroService.getHeroes()
             .subscribe(heroes => this.heroes = heroes);
-    }
-
-    onSelect(hero: Hero): void {
-        this.router.navigate(['/hero', hero.id]);
     }
 }

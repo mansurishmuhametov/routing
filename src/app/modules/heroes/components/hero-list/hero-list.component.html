@@ -1,11 +1,13 @@
-<h2>Heroes</h2>
-<ul class="heroes">
-    <li *ngFor="let hero of heroes"
-        [class.selected]="hero.id === selectedId"
-        [routerLink]="['/heroes', hero.id]">
-        <div>            
-            <span class="badge">{{ hero.id }}</span>
-            <span>{{ hero.name }}</span>
-        </div>
-    </li>
-</ul>
+<div>
+    <h2>Heroes</h2>
+    <ul class="heroes">
+        <li *ngFor="let hero of heroes"
+            [class.selected]="hero.id === selectedId"
+            [routerLink]="['/heroes', hero.id]">
+            <div>            
+                <span class="badge">{{ hero.id }}</span>
+                <span>{{ hero.name }}</span>
+            </div>
+        </li>
+    </ul>
+</div>
