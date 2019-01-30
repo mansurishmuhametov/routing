@@ -3,6 +3,7 @@ import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HeroesRoutingModule } from './heroes-routing.module';
 
+import { HeroComponent } from './components/hero/hero.component';
 import { HeroListComponent } from './components/hero-list/hero-list.component';
 import { HeroDetailComponent } from './components/hero-detail/hero-detail.component';
 
@@ -16,6 +17,7 @@ import { MessageService } from '@app/message.service';
         FormsModule
     ],
     declarations: [
+        HeroComponent,
         HeroListComponent,
         HeroDetailComponent
     ],

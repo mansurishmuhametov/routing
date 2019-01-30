@@ -31,8 +31,12 @@ const routes: Routes = [
         component: LoginComponent
     },
     {
+        path: 'heroes',
+        loadChildren: '@app/modules/heroes/heroes.module#HeroesModule'
+    },
+    {
         path: '',
-        redirectTo: '/superheroes',
+        redirectTo: 'heroes',
         pathMatch: 'full'
     },
     {
@@ -50,7 +54,8 @@ const routes: Routes = [
                 // preloadingStrategy: PreloadAllModules
                 preloadingStrategy: SelectivePreloadingStrategyService
             }
-        )],
+        )
+    ],
     exports: [RouterModule],
     providers: [
         SelectivePreloadingStrategyService

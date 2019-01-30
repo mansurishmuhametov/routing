@@ -6,7 +6,6 @@ import { Router, RouterModule } from '@angular/router';
 
 import { AuthModule } from '@app-modules/auth/auth.module';
 import { CoreModule } from '@app/core/core.module';
-import { HeroesModule } from './modules/heroes/heroes.module';
 
 import { AppComponent } from '@app-core/components/app/app.component';
 
@@ -21,7 +20,6 @@ import { AuthService } from '@app/modules/auth/services/auth.service';
         BrowserModule,
         BrowserAnimationsModule,
         FormsModule,
-        HeroesModule,
         RouterModule,
         // CoreModule have to be the last, cause default route
         CoreModule

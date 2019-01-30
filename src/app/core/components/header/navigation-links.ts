@@ -8,7 +8,7 @@ const links: NavigationLink[] = [
     },
     {
         name: 'Heroes',
-        routerLink: '/superheroes',
+        routerLink: '/heroes',
         order: 1
     },
     {

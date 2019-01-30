@@ -1,14 +1,26 @@
 import { NgModule } from '@angular/core';
 import { Routes, RouterModule } from '@angular/router';
 
+import { HeroComponent } from './components/hero/hero.component';
 import { HeroListComponent } from './components/hero-list/hero-list.component';
 import { HeroDetailComponent } from './components/hero-detail/hero-detail.component';
 
 const heroesRoutes: Routes = [
-    { path: 'heroes', redirectTo: 'superheroes' },
-    { path: 'hero/:id', redirectTo: 'superhero/:id' },
-    { path: 'superheroes', component: HeroListComponent, data: { animation: 'heroes' } },
-    { path: 'superhero/:id', component: HeroDetailComponent, data: { animation: 'hero' } }
+    {
+        path: '',
+        component: HeroComponent,
+        children: [
+            {
+                path: '', component: HeroListComponent,
+                data: { animation: 'heroes' }
+            },
+            {
+                path: ':id',
+                component: HeroDetailComponent,
+                data: { animation: 'hero' }
+            }
+        ]
+    }
 ];
 
 @NgModule({
