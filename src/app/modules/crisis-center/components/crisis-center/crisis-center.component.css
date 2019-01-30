@@ -1,6 +1,6 @@
 .crisis-center {
-    border: solid 5px palegreen;
+    border: solid 2px grey;
 }
 .crisis-center__router-outlet {
-    border: solid 5px palegreen;
+    border: solid 2px grey;
 }

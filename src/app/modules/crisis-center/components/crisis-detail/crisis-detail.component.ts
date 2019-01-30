@@ -1,6 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
-import { switchMap } from 'rxjs/operators';
 
 import { Crisis } from '@app-modules/crisis-center/models/crisis';
 import { CrisisService } from '@app-modules/crisis-center/services/crisis.service';
@@ -32,17 +31,8 @@ export class CrisisDetailComponent implements OnInit {
                 }
                 this.editName = data.crisis.name;
                 this.crisis = data.crisis;
-            });
-
-        /*
-        this.crisis$ = this.route.params.pipe(
-            switchMap((params) => {
-                return this.service.getCrisis(+params.id);
-            })
+            }
         );
-
-        this.crisis$.subscribe(crisis => this.crisis = crisis);
-        */
     }
 
     goToCrises(crisis: Crisis) {

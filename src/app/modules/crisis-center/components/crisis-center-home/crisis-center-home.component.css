@@ -1,6 +1,6 @@
 .crisis-center-home {
-    border: solid 5px palegoldenrod;
+    border: solid 2px grey;
 }
 .crisis-center-home__router-outlet {
-    border: solid 5px palegoldenrod;
+    border: solid 2px grey;
 }

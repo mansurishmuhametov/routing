@@ -1,16 +1,17 @@
 .app {
-    border: solid 5px palevioletred;
+    border: solid 2px grey;
+    margin: 50px;
 }
 .app__main-outlet {
-    border: solid 5px palevioletred;
+    border: solid 2px grey;
 }
 .app__popup-outlet {
-    border: solid 5px red;
+    border: solid 2px grey;
 }
 .app__girl-outlet {
-    border: solid 5px palegoldenrod;
+    border: solid 2px grey;
 }
 .app__header {
     padding: 10px;
-    border: solid 1px grey;
+    border: solid 2px grey;
 }

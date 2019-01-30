@@ -56,13 +56,13 @@
 }
 
 .crisis-list {
-    border: solid 5px blue;
+    border: solid 2px grey;
 }
 
 .crisis-list__router-outlet {
-    border: solid 5px blue;
+    border: solid 2px grey;
 }
 
 .crisis-list__message {
-    border: solid 5px yellow;
+    border: solid 2px grey;
 }
