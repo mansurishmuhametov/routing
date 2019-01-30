@@ -12,8 +12,8 @@ import { switchMap } from 'rxjs/operators';
     styleUrls: ['./hero-list.component.css']
 })
 export class HeroListComponent implements OnInit {
-    heroes$: Observable<Hero[]>;
     selectedId: number;
+    heroes: Hero[];
 
     constructor(
         private heroService: HeroService,
@@ -22,12 +22,17 @@ export class HeroListComponent implements OnInit {
     ) { }
 
     ngOnInit() {
-        this.heroes$ = this.route.paramMap.pipe(
-            switchMap(params => {
+        this.route.paramMap
+            .subscribe(params => {
                 this.selectedId = +params.get('id');
-                return this.heroService.getHeroes();
-            })
+                this.refreshHeroes();
+            }
         );
+    }
+
+    refreshHeroes() {
+        this.heroService.getHeroes()
+            .subscribe(heroes => this.heroes = heroes);
     }
 
     onSelect(hero: Hero): void {

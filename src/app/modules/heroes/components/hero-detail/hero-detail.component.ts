@@ -12,7 +12,7 @@ import { Observable } from 'rxjs/Observable';
     styleUrls: ['./hero-detail.component.css']
 })
 export class HeroDetailComponent implements OnInit {
-    hero$: Observable<Hero>;
+    hero: Hero;
 
     constructor(
         private route: ActivatedRoute,
@@ -21,15 +21,20 @@ export class HeroDetailComponent implements OnInit {
     ) { }
 
     ngOnInit() {
-        this.hero$ = this.route.params.pipe(
-            switchMap((params) => {
-                return this.service.getHero(+params.id);
-            })
-        );
+        this.route.paramMap
+            .subscribe(params => {
+                const id = +params.get('id');
+                this.refresh(id);
+            });
+    }
+
+    refresh(id) {
+        this.service.getHero(id)
+            .subscribe(hero => this.hero = hero);
     }
 
     goToHeroes(hero: Hero) {
         const heroId = hero ? hero.id : null;
-        this.router.navigate(['/heroes', { id: heroId, foo: 'foo'}]);
+        this.router.navigate(['/heroes', { id: heroId, extra: 'aaa'}]);
     }
 }
