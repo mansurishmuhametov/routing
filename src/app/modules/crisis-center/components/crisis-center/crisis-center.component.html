@@ -2,10 +2,10 @@
     <h2>Crisis center</h2>
     <div>
         <div>Message</div>
-        <a [routerLink]="['/crisis-center', { outlets: { 'messageContent': ['message'] } }]">Open message</a>
-        <div>
-            Here message content
-            <router-outlet name="messageContent"></router-outlet>
+        <a (click)="openMessage()">Open message</a>
+        <div class="crisis-center__message">
+            message ...
+            <router-outlet name="content"></router-outlet>
         </div>
     </div>
     <div class="crisis-center__router-outlet">

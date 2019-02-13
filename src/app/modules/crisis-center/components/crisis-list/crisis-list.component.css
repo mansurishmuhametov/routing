@@ -57,10 +57,12 @@
 
 .crisis-list {
     border: solid 2px grey;
+    padding: 10px;
 }
 
 .crisis-list__router-outlet {
-    border: solid 2px grey;
+    border: solid 2px palevioletred;
+    padding: 10px;
 }
 
 .crisis-list__message {

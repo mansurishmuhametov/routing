@@ -1,6 +1,12 @@
 .crisis-center {
     border: solid 2px grey;
+    padding: 10px;
 }
 .crisis-center__router-outlet {
-    border: solid 2px grey;
+    border: solid 2px palevioletred;
+    padding: 10px;
+}
+.crisis-center__message {
+    border: solid 2px paleturquoise;
+    padding: 10px;
 }

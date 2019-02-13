@@ -18,7 +18,7 @@ const routes: Routes = [
             {
                 path: 'message',
                 component: MessageComponent,
-                outlet: 'messageContent'
+                outlet: 'content'
             },
             {
                 path: '',
