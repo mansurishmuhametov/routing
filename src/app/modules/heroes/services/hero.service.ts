@@ -4,7 +4,7 @@ import { Injectable } from '@angular/core';
 import * as _ from 'lodash';
 
 import { Hero } from '../models/hero';
-import { Heroes } from '../mock-heroes';
+import { Heroes } from '../data/mock-heroes';
 import { MessageService } from '@app/message.service';
 
 @Injectable()

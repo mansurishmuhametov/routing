@@ -2,7 +2,7 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 
 import { HeroListComponent } from './hero-list.component';
-import { HeroService } from '@app/heroes/hero.service';
+import { HeroService } from '../../services/hero.service';
 import { MessageService } from '@app/message.service';
 
 describe('HeroListComponent', () => {

@@ -1,17 +1,28 @@
 .app {
     border: solid 2px grey;
     margin: 50px;
+    padding: 10px;
+}
+.app__title {
+    border: solid 2px grey;
+    padding: 10px;
+    margin: 5px;
 }
 .app__main-outlet {
     border: solid 2px grey;
+    padding: 10px;
+    margin: 5px;
 }
 .app__popup-outlet {
     border: solid 2px grey;
+    padding: 10px;
+    margin: 5px;
 }
 .app__girl-outlet {
     border: solid 2px grey;
 }
 .app__header {
     padding: 10px;
+    margin: 5px;
     border: solid 2px grey;
 }
