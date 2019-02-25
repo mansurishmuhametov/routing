@@ -12,14 +12,14 @@ import { CrisisDetailResolverService } from './services/crisis-detail-resolver.s
 
 const routes: Routes = [
     {
-        path: '',
+        path: 'message',
+        component: MessageComponent,
+        outlet: 'content'
+    },
+    {
+        path: 'home',
         component: CrisisCenterComponent,
         children: [
-            {
-                path: 'message',
-                component: MessageComponent,
-                outlet: 'content'
-            },
             {
                 path: '',
                 component: CrisisListComponent,
@@ -39,7 +39,12 @@ const routes: Routes = [
                 ]
             }
         ]
-    }
+    },
+    {
+        path: '',
+        redirectTo: 'home',
+        pathMatch: 'full'
+    },
 ];
 
 @NgModule({

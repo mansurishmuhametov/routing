@@ -1,10 +1,15 @@
 <div class="crisis-center">
     <h2>Crisis center</h2>
     <div>
-        <div>Message</div>
-        <a (click)="openMessage()">Open message</a>
         <div class="crisis-center__message">
-            message ...
+            <div (click)="openMessage()"
+                class="btn btn-primary">
+                <span>Open</span>
+            </div>
+            <div (click)="closeMessage()"
+                class="btn btn-light">
+                <span>Close</span>
+            </div>
             <router-outlet name="content"></router-outlet>
         </div>
     </div>
