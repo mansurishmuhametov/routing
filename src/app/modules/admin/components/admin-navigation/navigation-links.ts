@@ -3,7 +3,7 @@ import { NavigationLink } from '@app-shared/components/navigation/navigation-lin
 const links: NavigationLink[] = [
     {
         name: 'Dashboard',
-        routerLink: './',
+        routerLink: './dashboard',
         order: 0
     },
     {
