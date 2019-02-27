@@ -12,16 +12,16 @@ import { CrisisDetailResolverService } from './services/crisis-detail-resolver.s
 
 const routes: Routes = [
     {
-        path: 'message',
-        component: MessageComponent,
-        outlet: 'content'
-    },
-    {
         path: 'home',
         component: CrisisCenterComponent,
         children: [
             {
-                path: '',
+                path: 'message',
+                component: MessageComponent,
+                outlet: 'content'
+            },
+            {
+                path: 'list',
                 component: CrisisListComponent,
                 children: [
                     {
@@ -37,7 +37,12 @@ const routes: Routes = [
                         component: CrisisCenterHomeComponent
                     }
                 ]
-            }
+            },
+            {
+                path: '',
+                redirectTo: 'list',
+                pathMatch: 'full'
+            },
         ]
     },
     {

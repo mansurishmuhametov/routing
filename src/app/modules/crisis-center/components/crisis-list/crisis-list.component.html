@@ -1,15 +1,15 @@
-<div class="crisis-list">
+<div class="im-component">
     <h2>Crises</h2>
     <ul class="crises">
         <li *ngFor="let crisis of crises$ | async"
             [class.selected]="crisis.id === selectedId"
-            [routerLink]="['/crisis-center', crisis.id]">
+            (click)="goToDetail(crisis.id)">
         <div>
             <span class="badge">{{ crisis.id }}</span>{{ crisis.name }}
         </div>
         </li>
     </ul>
-    <div class="crisis-list__router-outlet">
+    <div class="im-outlet">
         <router-outlet></router-outlet>
     </div>
 </div>
