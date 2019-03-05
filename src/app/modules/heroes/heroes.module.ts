@@ -2,6 +2,7 @@ import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { HeroesRoutingModule } from './heroes-routing.module';
+import { SharedModule } from '@app-shared/shared.module';
 
 import { HeroComponent } from './components/hero/hero.component';
 import { HeroListComponent } from './components/hero-list/hero-list.component';
@@ -14,7 +15,8 @@ import { MessageService } from '@app/message.service';
     imports: [
         CommonModule,
         HeroesRoutingModule,
-        FormsModule
+        FormsModule,
+        SharedModule
     ],
     declarations: [
         HeroComponent,

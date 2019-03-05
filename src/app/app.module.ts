@@ -4,7 +4,6 @@ import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { Router, RouterModule } from '@angular/router';
 
-import { AuthModule } from '@app-modules/auth/auth.module';
 import { CoreModule } from '@app/core/core.module';
 
 import { AppComponent } from '@app-core/components/app/app.component';
@@ -16,7 +15,6 @@ import { AuthService } from '@app/modules/auth/services/auth.service';
 
 @NgModule({
     imports: [
-        AuthModule,
         BrowserModule,
         BrowserAnimationsModule,
         FormsModule,

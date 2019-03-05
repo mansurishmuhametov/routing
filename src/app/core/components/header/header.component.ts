@@ -14,7 +14,6 @@ export class HeaderComponent implements OnInit {
     constructor() { }
 
     ngOnInit() {
-        debugger;
         this.links = navigationLinks;
     }
 }

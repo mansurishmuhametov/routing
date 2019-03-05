@@ -11,7 +11,9 @@ import { HeroService } from '../../services/hero.service';
 })
 export class HeroListComponent implements OnInit {
     selectedId: number;
+    heads: string[];
     heroes: Hero[];
+    config: object;
 
     constructor(
         private heroService: HeroService,
@@ -26,6 +28,8 @@ export class HeroListComponent implements OnInit {
                 this.refreshHeroes();
             }
         );
+
+        this.initTable();
     }
 
     refreshHeroes() {
@@ -35,5 +39,22 @@ export class HeroListComponent implements OnInit {
 
     goToHeroDetail(heroId: number) {
         this.router.navigate(['/heroes', heroId]);
+    }
+
+    initTable() {
+        this.initHeads();
+        this.initConfig();
+    }
+
+    initHeads() {
+        this.heads = ['', 'Название', 'Сила'];
+    }
+
+    initConfig() {
+        this.config = {
+            column: {
+                order: ['id', 'name', 'power']
+            }
+        };
     }
 }

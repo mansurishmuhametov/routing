@@ -4,7 +4,7 @@ import { RouterTestingModule } from '@angular/router/testing';
 
 import { AppComponent } from './app.component';
 import { CoreModule } from '@app-core/core.module';
-import { AuthModule } from '@app/auth/auth.module';
+import { AuthModule } from '@app-modules/auth/auth.module';
 
 describe('AppComponent', () => {
     beforeEach(async(() => {

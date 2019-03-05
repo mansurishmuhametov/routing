@@ -1,0 +1,27 @@
+<div>
+    <table class="table table-sm table-bordered table-hover">
+        <thead class="thead-light">
+            <tr *ngIf="heads">
+                <th *ngFor="let item of heads">
+                    <span>{{ item }}</span>
+                </th>
+            </tr>
+            <tr *ngIf="!heads">
+                <th *ngFor="let item of config.column.order">
+                    <span>{{ item }}</span>
+                </th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr *ngFor="let item of body">
+                <th *ngFor="let i of config.column.order">
+                    <span>{{ item[i] }}</span>
+                </th>
+            </tr>
+        </tbody>
+        <tfoot>
+            <tr *ngFor="let item of foot">
+            </tr>
+        </tfoot>
+    </table>
+</div>
