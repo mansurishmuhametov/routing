@@ -1,27 +1,21 @@
 <div>
-    <table class="table table-sm table-bordered table-hover">
+    <table class="table table-sm table-bordered fixed_header">
         <thead class="thead-light">
-            <tr *ngIf="heads">
-                <th *ngFor="let item of heads">
-                    <span>{{ item }}</span>
+            <tr>
+                <th *ngFor="let item of heads; let i = index;"
+                    [ngStyle]="item.style">
+                    <span>{{ item.name }}</span>
                 </th>
-            </tr>
-            <tr *ngIf="!heads">
-                <th *ngFor="let item of config.column.order">
-                    <span>{{ item }}</span>
-                </th>
+                <th style="width: 17px;"></th>
             </tr>
         </thead>
-        <tbody>
+        <tbody [ngStyle]="bodyStyle">
             <tr *ngFor="let item of body">
-                <th *ngFor="let i of config.column.order">
-                    <span>{{ item[i] }}</span>
-                </th>
+                <td *ngFor="let head of heads;"
+                    [ngStyle]="head.style">
+                    <span>{{ item[head.match] }}</span>
+                </td>
             </tr>
         </tbody>
-        <tfoot>
-            <tr *ngFor="let item of foot">
-            </tr>
-        </tfoot>
     </table>
 </div>

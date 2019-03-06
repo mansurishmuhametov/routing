@@ -11,9 +11,9 @@ import { HeroService } from '../../services/hero.service';
 })
 export class HeroListComponent implements OnInit {
     selectedId: number;
-    heads: string[];
+    heads: object[];
     heroes: Hero[];
-    config: object;
+    tableConfig: object;
 
     constructor(
         private heroService: HeroService,
@@ -47,14 +47,28 @@ export class HeroListComponent implements OnInit {
     }
 
     initHeads() {
-        this.heads = ['', 'Название', 'Сила'];
+        this.heads = [
+            {
+                name: '',
+                match: 'id',
+                width: '200px',
+            },
+            {
+                name: 'Название',
+                match: 'name',
+                width: '200px',
+            },
+            {
+                name: 'Сила',
+                match: 'power',
+                width: '200px',
+            }
+        ];
     }
 
     initConfig() {
-        this.config = {
-            column: {
-                order: ['id', 'name', 'power']
-            }
+        this.tableConfig = {
+            height: '200px'
         };
     }
 }
