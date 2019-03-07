@@ -1,5 +1,6 @@
 export class Head {
     name: string;
     match: string;
-    width: string;
+    width: number;
+    order: number;
 }

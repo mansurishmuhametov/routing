@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { Hero } from '../../models/hero';
+import { Head } from '@app-shared/components/table/model/head';
 import { HeroService } from '../../services/hero.service';
 
 @Component({
@@ -11,7 +12,7 @@ import { HeroService } from '../../services/hero.service';
 })
 export class HeroListComponent implements OnInit {
     selectedId: number;
-    heads: object[];
+    heads: Head[];
     heroes: Hero[];
     tableConfig: object;
 
@@ -51,17 +52,20 @@ export class HeroListComponent implements OnInit {
             {
                 name: '',
                 match: 'id',
-                width: '200px',
+                width: 40,
+                order: 0
             },
             {
                 name: 'Название',
                 match: 'name',
-                width: '200px',
+                width: 200,
+                order: 1
             },
             {
                 name: 'Сила',
                 match: 'power',
-                width: '200px',
+                width: 300,
+                order: 2
             }
         ];
     }
