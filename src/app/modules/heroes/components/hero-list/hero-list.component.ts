@@ -2,8 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { Hero } from '../../models/hero';
-import { TableHead } from '@app/modules/shared/components/table/model/table-head';
-import { TableConfig } from '@app/modules/shared/components/table/model/table-config';
+import { TableHead } from '@app-shared/components/table/model/table-head';
+import { TableConfig } from '@app-shared/components/table/model/table-config';
 import { HeroService } from '../../services/hero.service';
 
 @Component({

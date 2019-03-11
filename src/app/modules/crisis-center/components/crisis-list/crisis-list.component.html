@@ -9,6 +9,13 @@
         </div>
         </li>
     </ul>
+    <div>        
+        <app-table 
+            [heads]="heads"
+            [body]="body"
+            [config]="tableConfig">
+        </app-table>
+    </div>
     <div class="im-outlet">
         <router-outlet></router-outlet>
     </div>

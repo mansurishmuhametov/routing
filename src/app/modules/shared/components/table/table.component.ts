@@ -14,7 +14,7 @@ import * as _ from 'lodash';
 })
 export class TableComponent implements OnInit {
     @Input() heads: TableHead[];
-    @Input() body: object;
+    @Input() body: object[];
     @Input() config: TableConfig;
 
     bodyStyle: TableBodyStyle;
@@ -29,8 +29,14 @@ export class TableComponent implements OnInit {
 
     initConfig() {
         this.bodyStyle = {
-            height: `${this.config.height}px`
+            height: ''
         };
+
+        if (!this.config) {
+            return;
+        }
+
+        this.bodyStyle.height = `${ this.config.height }px`;
     }
 
     initColumnsStyles() {

@@ -19,3 +19,7 @@
     padding: 20px;
     margin: 5px;
 }
+
+.hi {
+    border: solid 2px red;
+}

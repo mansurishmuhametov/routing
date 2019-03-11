@@ -2,6 +2,7 @@ import { CommonModule } from '@angular/common';
 import { CrisisCenterRoutingModule } from './crisis-center-routing.module';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
+import { SharedModule } from '@app-shared/shared.module';
 
 import { CrisisCenterComponent } from './components/crisis-center/crisis-center.component';
 import { CrisisCenterHomeComponent } from './components/crisis-center-home/crisis-center-home.component';
@@ -18,7 +19,8 @@ import { MessageService } from '@app/message.service';
     imports: [
         CommonModule,
         CrisisCenterRoutingModule,
-        FormsModule
+        FormsModule,
+        SharedModule
     ],
     declarations: [
         CrisisCenterComponent,

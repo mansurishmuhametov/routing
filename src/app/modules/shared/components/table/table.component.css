@@ -17,3 +17,11 @@
 .fixed_header th, .fixed_header td {
     text-align: left;
 }
+
+.scroll-head {
+    width: 17px;
+}
+
+.im-table {
+    margin: 0;
+}
