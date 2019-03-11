@@ -2,7 +2,8 @@ import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute, Router } from '@angular/router';
 
 import { Hero } from '../../models/hero';
-import { Head } from '@app-shared/components/table/model/head';
+import { TableHead } from '@app/modules/shared/components/table/model/table-head';
+import { TableConfig } from '@app/modules/shared/components/table/model/table-config';
 import { HeroService } from '../../services/hero.service';
 
 @Component({
@@ -12,9 +13,9 @@ import { HeroService } from '../../services/hero.service';
 })
 export class HeroListComponent implements OnInit {
     selectedId: number;
-    heads: Head[];
+    heads: TableHead[];
     heroes: Hero[];
-    tableConfig: object;
+    tableConfig: TableConfig;
 
     constructor(
         private heroService: HeroService,
@@ -72,7 +73,7 @@ export class HeroListComponent implements OnInit {
 
     initConfig() {
         this.tableConfig = {
-            height: '200px'
+            height: 100
         };
     }
 }

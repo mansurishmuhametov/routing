@@ -1,4 +1,4 @@
-export class ColumnStyle {
+export class TableColumnStyle {
     match: string;
     value: any;
 

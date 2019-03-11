@@ -1,7 +1,9 @@
 import { Component, OnInit, Input } from '@angular/core';
 
-import { Head } from './model/head';
-import { ColumnStyle } from './model/columnStyle';
+import { TableHead } from './model/table-head';
+import { TableConfig } from './model/table-config';
+import { TableColumnStyle } from './model/table-column-style';
+import { TableBodyStyle } from './model/table-body-style';
 
 import * as _ from 'lodash';
 
@@ -11,12 +13,12 @@ import * as _ from 'lodash';
     styleUrls: ['./table.component.css']
 })
 export class TableComponent implements OnInit {
-    @Input() heads: Head[];
+    @Input() heads: TableHead[];
     @Input() body: object;
-    @Input() config: any;
+    @Input() config: TableConfig;
 
-    bodyStyle: object;
-    columnsStyles: ColumnStyle[];
+    bodyStyle: TableBodyStyle;
+    columnsStyles: TableColumnStyle[];
 
     constructor() { }
 
@@ -27,7 +29,7 @@ export class TableComponent implements OnInit {
 
     initConfig() {
         this.bodyStyle = {
-            height: this.config.height
+            height: `${this.config.height}px`
         };
     }
 
@@ -37,7 +39,7 @@ export class TableComponent implements OnInit {
                 width: `${item.width}px`
             };
 
-            return new ColumnStyle(item.match, value);
+            return new TableColumnStyle(item.match, value);
         });
     }
 
@@ -59,7 +61,7 @@ export class TableComponent implements OnInit {
 
         // const p = style2.match;
 
-        const style: ColumnStyle = this.columnsStyles.find(item => {
+        const style: TableColumnStyle = this.columnsStyles.find(item => {
             return item.match === match;
          });
 

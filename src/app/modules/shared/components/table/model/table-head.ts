@@ -1,4 +1,4 @@
-export class Head {
+export class TableHead {
     name: string;
     match: string;
     width: number;
