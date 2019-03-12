@@ -9,7 +9,6 @@ import { CoreModule } from '@app/core/core.module';
 import { AppComponent } from '@app-core/components/app/app.component';
 
 import { AuthGuard } from '@app/modules/auth/guards/auth.guard';
-import { CanDeactivateGuard } from './can-deactivate.guard';
 
 import { AuthService } from '@app/modules/auth/services/auth.service';
 
@@ -27,8 +26,7 @@ import { AuthService } from '@app/modules/auth/services/auth.service';
     ],
     providers: [
         AuthGuard,
-        AuthService,
-        CanDeactivateGuard
+        AuthService
     ],
     bootstrap: [AppComponent]
 })
