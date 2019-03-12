@@ -12,7 +12,6 @@ import { MessageComponent } from './components/message/message.component';
 
 import { CrisisDetailResolverService } from './services/crisis-detail-resolver.service';
 import { CrisisService } from './services/crisis.service';
-import { DialogService } from '@app/dialog.service';
 import { MessageService } from '@app/message.service';
 
 @NgModule({
@@ -32,7 +31,6 @@ import { MessageService } from '@app/message.service';
     providers: [
         CrisisDetailResolverService,
         CrisisService,
-        DialogService,
         MessageService
     ]
 })

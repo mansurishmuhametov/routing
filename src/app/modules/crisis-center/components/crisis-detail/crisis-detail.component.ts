@@ -3,7 +3,7 @@ import { Router, ActivatedRoute } from '@angular/router';
 
 import { Crisis } from '@app-modules/crisis-center/models/crisis';
 import { CrisisService } from '@app-modules/crisis-center/services/crisis.service';
-import { DialogService } from '@app/dialog.service';
+import { DialogService } from '@app-shared/services/dialog/dialog.service';
 import { Observable } from 'rxjs/Observable';
 
 @Component({

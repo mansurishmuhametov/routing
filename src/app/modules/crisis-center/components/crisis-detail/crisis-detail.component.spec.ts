@@ -3,8 +3,8 @@ import { FormsModule } from '@angular/forms';
 import { RouterTestingModule } from '@angular/router/testing';
 
 import { CrisisDetailComponent } from './crisis-detail.component';
-import { CrisisService } from '@app/crisis-center/services/crisis.service';
-import { DialogService } from '@app/dialog.service';
+import { CrisisService } from '@app-modules/crisis-center/services/crisis.service';
+import { DialogService } from '@app/modules/shared/services/dialog/dialog.service';
 import { MessageService } from '@app/message.service';
 
 describe('CrisisDetailComponent', () => {
