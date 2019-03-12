@@ -2,7 +2,7 @@ import { TestBed, inject } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 
 import { CrisisDetailResolverService } from './crisis-detail-resolver.service';
-import { CrisisService } from '@app/crisis-center/services/crisis.service';
+import { CrisisService } from '@app-modules/crisis-center/services/crisis.service';
 import { MessageService } from '@app/message.service';
 
 describe('CrisisDetailResolverService', () => {
