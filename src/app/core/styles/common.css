@@ -1,13 +1,11 @@
 .im-outlet {
     border: solid 5px blue;
     padding: 20px;
-    margin: 5px;
 }
 
 .im-name-outlet {
     border: solid 5px palevioletred;
     padding: 20px;
-    margin: 5px;
 }
 
 .im-component {
@@ -17,7 +15,6 @@
 .im-shell {
     border: solid 5px green;
     padding: 20px;
-    margin: 5px;
 }
 
 .hi {

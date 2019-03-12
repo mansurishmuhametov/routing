@@ -58,3 +58,7 @@
 .crisis-list__message {
     border: solid 2px grey;
 }
+
+.crisis-component {
+    padding: 20px;
+}
