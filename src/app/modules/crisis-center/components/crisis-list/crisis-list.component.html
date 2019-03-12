@@ -13,7 +13,8 @@
         <app-table 
             [heads]="heads"
             [body]="body"
-            [config]="tableConfig">
+            [config]="tableConfig"
+            (rowClickCallback)="crisisSelected($event[0])">
         </app-table>
     </div>
     <div class="im-outlet">

@@ -25,3 +25,7 @@
 .im-table {
     margin: 0;
 }
+
+.click {
+    cursor: pointer;
+}

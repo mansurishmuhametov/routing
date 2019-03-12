@@ -1,4 +1,8 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component,
+         OnInit,
+         Input,
+         Output,
+         EventEmitter } from '@angular/core';
 
 import { TableHead } from './model/table-head';
 import { TableConfig } from './model/table-config';
@@ -16,6 +20,7 @@ export class TableComponent implements OnInit {
     @Input() heads: TableHead[];
     @Input() body: object[];
     @Input() config: TableConfig;
+    @Output() rowClickCallback: EventEmitter<any> = new EventEmitter();
 
     bodyStyle: TableBodyStyle;
     columnsStyles: TableColumnStyle[];
@@ -72,5 +77,9 @@ export class TableComponent implements OnInit {
          });
 
         return style ? style.value : {};
+    }
+
+    rowClick(row) {
+        this.rowClickCallback.emit([row]);
     }
 }

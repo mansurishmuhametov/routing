@@ -79,4 +79,8 @@ export class CrisisListComponent implements OnInit {
     goToDetail(crisisId) {
         this.router.navigate(['./', crisisId], { relativeTo: this.route });
     }
+
+    crisisSelected(row) {
+        this.goToDetail(row.id);
+    }
 }
