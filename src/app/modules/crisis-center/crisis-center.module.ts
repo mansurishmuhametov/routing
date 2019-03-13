@@ -6,7 +6,7 @@ import { SharedModule } from '@app-shared/shared.module';
 
 import { CanDeactivateCrisisDetailComponentGuard } from './guards/crisis-detail/can-deactivate.guard';
 
-import { CrisisDetailResolverService } from './services/crisis-detail-resolver.service';
+import { CrisisDetailResolverService } from './guards/crisis-detail/crisis-detail-resolver.service';
 import { CrisisService } from './services/crisis.service';
 import { MessageService } from '@app/message.service';
 

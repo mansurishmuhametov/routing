@@ -19,7 +19,7 @@ export class CrisisDetailComponent implements OnInit {
     constructor(
         private route: ActivatedRoute,
         private router: Router,
-        private service: CrisisService,
+        private crisisService: CrisisService,
         public dialogService: DialogService
     ) { }
 
@@ -29,6 +29,7 @@ export class CrisisDetailComponent implements OnInit {
                 if (!data.crisis) {
                     return;
                 }
+
                 this.editName = data.crisis.name;
                 this.crisis = data.crisis;
             }
@@ -44,7 +45,12 @@ export class CrisisDetailComponent implements OnInit {
         this.goToCrises(null);
     }
 
-    save() {
-        this.goToCrises(null);
+    save(crisis) {
+        const self = this;
+
+        this.crisisService.save(crisis)
+            .subscribe(() => {
+                self.ngOnInit();
+            });
     }
 }

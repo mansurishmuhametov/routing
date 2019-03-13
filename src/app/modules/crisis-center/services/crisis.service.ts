@@ -13,16 +13,22 @@ export class CrisisService {
     constructor(private messageService: MessageService) { }
 
     getCrises(): Observable<Crisis[]> {
-        // TODO: send the message _after_ fetching the crises
-        this.messageService.add('CrisisService: fetched crises');
-        return of(Crises);
+        const crises = _.cloneDeep(Crises);
+
+        return of(crises);
     }
 
     getCrisis(id: number): Observable<Crisis> {
-        // TODO: send the message _after_ fetching the crises
-        this.messageService.add('CrisisService: fetched crises');
-        const crisis = _.find(Crises, { id: id });
+        const crises = _.cloneDeep(Crises);
+        const crisis = _.find(crises, { id: id });
 
         return of(crisis);
+    }
+
+    save(crisis: Crisis) {
+        const old = _.find(Crises, { id: crisis.id });
+        old.name = crisis.name;
+
+        return of(true);
     }
 }
