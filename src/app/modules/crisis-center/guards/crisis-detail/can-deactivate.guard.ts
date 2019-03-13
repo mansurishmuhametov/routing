@@ -1,7 +1,6 @@
 import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs/Observable';
-import { CanActivate,
-         ActivatedRouteSnapshot,
+import { ActivatedRouteSnapshot,
          RouterStateSnapshot,
          CanDeactivate } from '@angular/router';
 import { CrisisDetailComponent } from '@app-modules/crisis-center/components/crisis-detail/crisis-detail.component';
@@ -11,19 +10,20 @@ export interface CanComponentDeactivate {
 }
 
 @Injectable()
-export class CanDeactivateGuard implements CanDeactivate<CrisisDetailComponent> {
+export class CanDeactivateCrisisDetailComponentGuard implements CanDeactivate<CrisisDetailComponent> {
     canDeactivate(
         component: CrisisDetailComponent,
         route: ActivatedRouteSnapshot,
         state: RouterStateSnapshot
     ): Observable<boolean> | boolean {
-        console.log(route.paramMap.get('id'));
-        console.log(state.url);
-
-        if (!component.crisis || component.crisis.name === component.editName) {
-            return true;
+        if (this.isChanged(component)) {
+            return component.dialogService.confirm('Discard changes ?');
         }
 
-        return component.dialogService.confirm('Discard changes?');
+        return true;
+    }
+
+    isChanged(component) {
+        return (component.crisis && component.crisis.name !== component.editName);
     }
 }

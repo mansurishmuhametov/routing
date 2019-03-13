@@ -47,12 +47,4 @@ export class CrisisDetailComponent implements OnInit {
     save() {
         this.goToCrises(null);
     }
-
-    canDeactivate(): Observable<boolean> | boolean {
-        if (!this.crisis || this.crisis.name === this.editName) {
-            return true;
-        }
-
-        return this.dialogService.confirm('Discard changes?');
-    }
 }

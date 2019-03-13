@@ -4,15 +4,17 @@ import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { SharedModule } from '@app-shared/shared.module';
 
+import { CanDeactivateCrisisDetailComponentGuard } from './guards/crisis-detail/can-deactivate.guard';
+
+import { CrisisDetailResolverService } from './services/crisis-detail-resolver.service';
+import { CrisisService } from './services/crisis.service';
+import { MessageService } from '@app/message.service';
+
 import { CrisisCenterComponent } from './components/crisis-center/crisis-center.component';
 import { CrisisCenterHomeComponent } from './components/crisis-center-home/crisis-center-home.component';
 import { CrisisDetailComponent } from './components/crisis-detail/crisis-detail.component';
 import { CrisisListComponent } from './components/crisis-list/crisis-list.component';
 import { MessageComponent } from './components/message/message.component';
-
-import { CrisisDetailResolverService } from './services/crisis-detail-resolver.service';
-import { CrisisService } from './services/crisis.service';
-import { MessageService } from '@app/message.service';
 
 @NgModule({
     imports: [
@@ -31,7 +33,8 @@ import { MessageService } from '@app/message.service';
     providers: [
         CrisisDetailResolverService,
         CrisisService,
-        MessageService
+        MessageService,
+        CanDeactivateCrisisDetailComponentGuard
     ]
 })
 export class CrisisCenterModule { }
