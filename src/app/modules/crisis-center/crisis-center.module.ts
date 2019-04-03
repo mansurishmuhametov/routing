@@ -2,7 +2,10 @@ import { CommonModule } from '@angular/common';
 import { CrisisCenterRoutingModule } from './crisis-center-routing.module';
 import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
+
 import { SharedModule } from '@app-shared/shared.module';
+
+import { CanDeactivateGuard } from '@app-shared/guards/can-deactivate/can-deactivate.guard';
 
 import { CrisisDetailResolverService } from './guards/crisis-detail/crisis-detail-resolver.service';
 import { CrisisService } from './services/crisis.service';
@@ -29,6 +32,7 @@ import { MessageComponent } from './components/message/message.component';
         MessageComponent
     ],
     providers: [
+        CanDeactivateGuard,
         CrisisDetailResolverService,
         CrisisService,
         MessageService

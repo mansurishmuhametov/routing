@@ -1,7 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
 
-import { CanComponentDeactivate } from '@app-core/guards/can-deactivate.guard';
+import { CanComponentDeactivate } from '@app-shared/guards/can-deactivate/can-deactivate.guard';
 
 import { Crisis } from '@app-modules/crisis-center/models/crisis';
 import { CrisisService } from '@app-modules/crisis-center/services/crisis.service';
