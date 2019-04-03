@@ -1,5 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { Router, ActivatedRoute } from '@angular/router';
+
+import { CanComponentDeactivate } from '@app-core/guards/can-deactivate.guard';
 
 import { Crisis } from '@app-modules/crisis-center/models/crisis';
 import { CrisisService } from '@app-modules/crisis-center/services/crisis.service';
@@ -11,7 +13,7 @@ import { Observable } from 'rxjs/Observable';
     templateUrl: './crisis-detail.component.html',
     styleUrls: ['./crisis-detail.component.css']
 })
-export class CrisisDetailComponent implements OnInit {
+export class CrisisDetailComponent implements OnInit, CanComponentDeactivate {
     crisis$: Observable<Crisis>;
     crisis: Crisis;
     editName: string;
@@ -52,5 +54,17 @@ export class CrisisDetailComponent implements OnInit {
             .subscribe(() => {
                 self.ngOnInit();
             });
+    }
+
+    canDeactivate(): Observable<boolean> | boolean {
+        if (this.isChanged()) {
+            return this.dialogService.confirm('Discard changes ?');
+        }
+
+        return true;
+    }
+
+    isChanged() {
+        return (this.crisis && this.crisis.name !== this.editName);
     }
 }

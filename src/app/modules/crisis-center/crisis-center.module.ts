@@ -4,8 +4,6 @@ import { FormsModule } from '@angular/forms';
 import { NgModule } from '@angular/core';
 import { SharedModule } from '@app-shared/shared.module';
 
-import { CanDeactivateCrisisDetailComponentGuard } from './guards/crisis-detail/can-deactivate.guard';
-
 import { CrisisDetailResolverService } from './guards/crisis-detail/crisis-detail-resolver.service';
 import { CrisisService } from './services/crisis.service';
 import { MessageService } from '@app/message.service';
@@ -33,8 +31,7 @@ import { MessageComponent } from './components/message/message.component';
     providers: [
         CrisisDetailResolverService,
         CrisisService,
-        MessageService,
-        CanDeactivateCrisisDetailComponentGuard
+        MessageService
     ]
 })
 export class CrisisCenterModule { }
