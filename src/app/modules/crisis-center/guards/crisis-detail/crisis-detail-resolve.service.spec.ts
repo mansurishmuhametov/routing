@@ -1,25 +1,25 @@
 import { TestBed, inject } from '@angular/core/testing';
 import { RouterTestingModule } from '@angular/router/testing';
 
-import { CrisisDetailResolverService } from './crisis-detail-resolver.service';
+import { CrisisDetailResolveService } from './crisis-detail-resolve.service';
 import { CrisisService } from '@app-modules/crisis-center/services/crisis.service';
 import { MessageService } from '@app/message.service';
 
-describe('CrisisDetailResolverService', () => {
+describe('CrisisDetailResolveService', () => {
     beforeEach(() => {
         TestBed.configureTestingModule({
             imports: [
                 RouterTestingModule.withRoutes([])
             ],
             providers: [
-                CrisisDetailResolverService,
+                CrisisDetailResolveService,
                 CrisisService,
                 MessageService
             ]
         });
     });
 
-    it('should be created', inject([CrisisDetailResolverService], (service: CrisisDetailResolverService) => {
+    it('should be created', inject([CrisisDetailResolveService], (service: CrisisDetailResolveService) => {
         expect(service).toBeTruthy();
     }));
 });

@@ -6,13 +6,13 @@ import { Router,
          ActivatedRoute } from '@angular/router';
 import { Observable } from 'rxjs/observable';
 import { of } from 'rxjs/observable/of';
-import { mergeMap, take } from 'rxjs/operators';
+import { mergeMap } from 'rxjs/operators';
 
 import { CrisisService } from '../../services/crisis.service';
 import { Crisis } from '../../models/crisis';
 
 @Injectable()
-export class CrisisDetailResolverService implements Resolve<Crisis> {
+export class CrisisDetailResolveService implements Resolve<Crisis> {
     constructor(
         private crisisService: CrisisService,
         private router: Router,

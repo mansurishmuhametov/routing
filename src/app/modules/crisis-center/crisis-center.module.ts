@@ -7,7 +7,7 @@ import { SharedModule } from '@app-shared/shared.module';
 
 import { CanDeactivateGuard } from '@app-shared/guards/can-deactivate/can-deactivate.guard';
 
-import { CrisisDetailResolverService } from './guards/crisis-detail/crisis-detail-resolver.service';
+import { CrisisDetailResolveService } from './guards/crisis-detail/crisis-detail-resolve.service';
 import { CrisisService } from './services/crisis.service';
 import { MessageService } from '@app/message.service';
 
@@ -33,7 +33,7 @@ import { MessageComponent } from './components/message/message.component';
     ],
     providers: [
         CanDeactivateGuard,
-        CrisisDetailResolverService,
+        CrisisDetailResolveService,
         CrisisService,
         MessageService
     ]
