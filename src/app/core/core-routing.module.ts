@@ -18,21 +18,21 @@ const routes: Routes = [
     },
     {
         path: 'admin',
-        loadChildren: '@app/modules/admin/admin.module#AdminModule',
+        loadChildren: '@app-modules/admin/admin.module#AdminModule',
         canLoad: [AuthGuard]
     },
     {
         path: 'crisis-center',
-        loadChildren: '@app/modules/crisis-center/crisis-center.module#CrisisCenterModule',
+        loadChildren: '@app-modules/crisis-center/crisis-center.module#CrisisCenterModule',
         data: { preload: false }
     },
     {
         path: 'login',
-        component: LoginComponent
+        loadChildren: '@app-modules/auth/auth.module#AuthModule'
     },
     {
         path: 'heroes',
-        loadChildren: '@app/modules/heroes/heroes.module#HeroesModule'
+        loadChildren: '@app-modules/heroes/heroes.module#HeroesModule'
     },
     {
         path: '',
