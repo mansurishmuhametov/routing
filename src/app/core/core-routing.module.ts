@@ -2,11 +2,10 @@ import { NgModule } from '@angular/core';
 import { RouterModule, Routes, PreloadAllModules } from '@angular/router';
 
 import { ComposeMessageComponent } from '@app-core/components/compose-message/compose-message.component';
-import { LoginComponent } from '@app-modules/auth/components/login/login.component';
 import { PageNotFoundComponent } from '@app-core/components/page-not-found/page-not-found.component';
 
 import { AuthGuard } from '@app-modules/auth/guards/auth.guard';
-import { SelectivePreloadingStrategyService } from '@app/selective-preloading-strategy.service';
+import { PreloadingStrategyService } from '@app-core/services/preloading-strategy/preloading-strategy.service';
 
 const routes: Routes = [
     // Хотелось бы также закрыть доступ к popup если пользователь не аутентифицирован
@@ -24,7 +23,7 @@ const routes: Routes = [
     {
         path: 'crisis-center',
         loadChildren: '@app-modules/crisis-center/crisis-center.module#CrisisCenterModule',
-        data: { preload: false }
+        data: { preload: true }
     },
     {
         path: 'login',
@@ -52,13 +51,13 @@ const routes: Routes = [
             {
                 enableTracing: false,
                 // preloadingStrategy: PreloadAllModules
-                preloadingStrategy: SelectivePreloadingStrategyService
+                preloadingStrategy: PreloadingStrategyService
             }
         )
     ],
     exports: [RouterModule],
     providers: [
-        SelectivePreloadingStrategyService
+        PreloadingStrategyService
     ]
 })
 export class CoreRoutingModule { }

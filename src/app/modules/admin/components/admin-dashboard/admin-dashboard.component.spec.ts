@@ -2,7 +2,6 @@ import { async, ComponentFixture, TestBed } from '@angular/core/testing';
 
 import { AdminDashboardComponent } from './admin-dashboard.component';
 import { RouterTestingModule } from '@angular/router/testing';
-import { SelectivePreloadingStrategyService } from '@app/selective-preloading-strategy.service';
 
 describe('AdminDashboardComponent', () => {
     let component: AdminDashboardComponent;
@@ -15,9 +14,6 @@ describe('AdminDashboardComponent', () => {
             ],
             declarations: [
                 AdminDashboardComponent
-            ],
-            providers: [
-                SelectivePreloadingStrategyService
             ]
         })
         .compileComponents();
